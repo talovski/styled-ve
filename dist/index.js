@@ -8,8 +8,8 @@ function styled(el, rules) {
     const args = [el, className];
     const Component = (0, runtime_1.runtime)(el, className);
     (0, functionSerializer_1.addFunctionSerializer)(Component, {
-        importPath: '@dessert-box/react/styledRuntime',
-        importName: 'styledRuntime',
+        importPath: 'styled-ve/runtime',
+        importName: 'runtime',
         // TODO: Fix this type, was complaining about string not being assignable to Serializable from VE lib
         args: args,
     });
