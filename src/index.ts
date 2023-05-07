@@ -12,8 +12,8 @@ function styled<T extends keyof JSX.IntrinsicElements>(
   const Component = runtime(el, className);
 
   addFunctionSerializer(Component, {
-    importPath: '@dessert-box/react/styledRuntime',
-    importName: 'styledRuntime',
+    importPath: 'styled-ve/runtime',
+    importName: 'runtime',
     // TODO: Fix this type, was complaining about string not being assignable to Serializable from VE lib
     args: args as any,
   });
