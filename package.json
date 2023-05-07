@@ -2,6 +2,7 @@
   "name": "styled-ve",
   "version": "1.0.3",
   "description": "",
+  "exports": {".": "dist/index.js", "./runtime": "dist/runtime.js"},
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
