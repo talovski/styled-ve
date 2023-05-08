@@ -1,6 +1,8 @@
 import { addFunctionSerializer } from '@vanilla-extract/css/functionSerializer';
 import { ComplexStyleRule, style } from '@vanilla-extract/css';
 import { runtime } from './runtime';
+export { styledRecipe } from './styledRecipe';
+export { createRuntimeFn } from './recipeRuntime';
 
 function styled<T extends keyof JSX.IntrinsicElements>(
   el: T,
