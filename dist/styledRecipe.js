@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.styledRecipe = void 0;
+exports.recipe = void 0;
 const css_1 = require("@vanilla-extract/css");
 const functionSerializer_1 = require("@vanilla-extract/css/functionSerializer");
 const recipeRuntime_1 = require("./recipeRuntime");
@@ -11,7 +11,7 @@ function mapValues(input, fn) {
     }
     return result;
 }
-function styledRecipe(options, el, debugId) {
+function recipe(options, el, debugId) {
     const { variants = {}, defaultVariants = {}, compoundVariants = [], base = '', } = options;
     const defaultClassName = typeof base === 'string' ? base : (0, css_1.style)(base, debugId);
     // @ts-expect-error
@@ -34,7 +34,7 @@ function styledRecipe(options, el, debugId) {
     };
     //
     const args = [config, el];
-    const Component = (0, recipeRuntime_1.createRuntimeFn)(config, el);
+    const Component = (0, recipeRuntime_1.createRecipe)(config, el);
     (0, functionSerializer_1.addFunctionSerializer)(Component, {
         importPath: 'styled-ve/recipeRuntime',
         importName: 'recipeRuntime',
@@ -48,4 +48,4 @@ function styledRecipe(options, el, debugId) {
     //   args: [config],
     // });
 }
-exports.styledRecipe = styledRecipe;
+exports.recipe = recipe;

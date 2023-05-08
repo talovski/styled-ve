@@ -1,12 +1,10 @@
-import { addRecipe } from '@vanilla-extract/css/recipe';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { addFunctionSerializer } from '@vanilla-extract/css/functionSerializer';
+import { createRecipe } from './recipeRuntime';
 
-import { createRuntimeFn } from './recipeRuntime';
 import type {
   PatternOptions,
   PatternResult,
-  RuntimeFn,
   VariantGroups,
   VariantSelection,
 } from './types';
@@ -26,7 +24,7 @@ function mapValues<Input extends Record<string, any>, OutputValue>(
   return result;
 }
 
-export function styledRecipe<T extends keyof JSX.IntrinsicElements, Variants extends VariantGroups>(
+export function recipe<T extends keyof JSX.IntrinsicElements, Variants extends VariantGroups>(
   options: PatternOptions<Variants>,
 	el: T,
   debugId?: string,
@@ -74,7 +72,7 @@ export function styledRecipe<T extends keyof JSX.IntrinsicElements, Variants ext
 //
   const args = [config, el] as const;
 
-  const Component = createRuntimeFn(config, el);
+  const Component = createRecipe(config, el);
 
   addFunctionSerializer(Component, {
     importPath: 'styled-ve/recipeRuntime',

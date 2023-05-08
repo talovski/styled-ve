@@ -1,11 +1,11 @@
 {
   "name": "styled-ve",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
   "exports": {
-    ".": "dist/index.js",
-    "./styledRecipe": "dist/styledRecipe.js",
-    "./runtime": "dist/runtime.js",
+    "./styled": "dist/styled.js",
+    "./recipe": "dist/styledRecipe.js",
+    "./styledRuntime": "dist/styledRuntime.js",
     "./recipeRuntime": "dist/recipeRuntime.js"
   },
   "main": "dist/index.js",

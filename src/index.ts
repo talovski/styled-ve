@@ -1,25 +1,6 @@
-import { addFunctionSerializer } from '@vanilla-extract/css/functionSerializer';
-import { ComplexStyleRule, style } from '@vanilla-extract/css';
-import { runtime } from './runtime';
-export { styledRecipe } from './styledRecipe';
-export { createRuntimeFn } from './recipeRuntime';
+export { styled } from './styled';
+export { styledRuntime } from './styledRuntime';
 
-function styled<T extends keyof JSX.IntrinsicElements>(
-  el: T,
-  rules: ComplexStyleRule,
-) {
-  const className = style(rules);
-  const args = [el, className] as const;
+export { recipe } from './styledRecipe';
+export { createRecipe } from './recipeRuntime';
 
-  const Component = runtime(el, className);
-
-  addFunctionSerializer(Component, {
-    importPath: 'styled-ve/runtime',
-    importName: 'runtime',
-    args: args as any,
-  });
-
-  return Component;
-}
-
-export default styled;

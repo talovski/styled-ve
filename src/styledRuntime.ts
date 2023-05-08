@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 
-export function runtime<T extends keyof JSX.IntrinsicElements>(
+export function styledRuntime<T extends keyof JSX.IntrinsicElements>(
   el: T,
   className: string,
 ) {

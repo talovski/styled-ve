@@ -1,7 +1,9 @@
 /// <reference types="react" />
 /// <reference types="react" />
-import type { PatternResult, VariantGroups } from './types';
-export declare const createRecipe: <Variants extends VariantGroups, T extends keyof JSX.IntrinsicElements>(config: PatternResult<Variants>, el: T) => {
+import { ComplexStyleRule } from '@vanilla-extract/css';
+export { recipe } from './styledRecipe';
+export { createRecipe } from './recipeRuntime';
+export declare function styled<T extends keyof JSX.IntrinsicElements>(el: T, rules: ComplexStyleRule): {
     (props: import("react").ComponentProps<T>): import("react").DOMElement<import("react").ComponentProps<T> & {
         className: string;
     }, SVGViewElement>;

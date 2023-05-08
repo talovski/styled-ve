@@ -1,17 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const functionSerializer_1 = require("@vanilla-extract/css/functionSerializer");
-const css_1 = require("@vanilla-extract/css");
-const runtime_1 = require("./runtime");
-function styled(el, rules) {
-    const className = (0, css_1.style)(rules);
-    const args = [el, className];
-    const Component = (0, runtime_1.runtime)(el, className);
-    (0, functionSerializer_1.addFunctionSerializer)(Component, {
-        importPath: 'styled-ve/runtime',
-        importName: 'runtime',
-        args: args,
-    });
-    return Component;
-}
-exports.default = styled;
+exports.createRecipe = exports.recipe = exports.styledRuntime = exports.styled = void 0;
+var styled_1 = require("./styled");
+Object.defineProperty(exports, "styled", { enumerable: true, get: function () { return styled_1.styled; } });
+var styledRuntime_1 = require("./styledRuntime");
+Object.defineProperty(exports, "styledRuntime", { enumerable: true, get: function () { return styledRuntime_1.styledRuntime; } });
+var styledRecipe_1 = require("./styledRecipe");
+Object.defineProperty(exports, "recipe", { enumerable: true, get: function () { return styledRecipe_1.recipe; } });
+var recipeRuntime_1 = require("./recipeRuntime");
+Object.defineProperty(exports, "createRecipe", { enumerable: true, get: function () { return recipeRuntime_1.createRecipe; } });

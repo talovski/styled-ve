@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createRuntimeFn = void 0;
+exports.createRecipe = void 0;
 const react_1 = require("react");
 const shouldApplyCompound = (compoundCheck, selections, defaultVariants) => {
     var _a;
@@ -11,7 +11,7 @@ const shouldApplyCompound = (compoundCheck, selections, defaultVariants) => {
     }
     return true;
 };
-const createRuntimeFn = (config, el) => {
+const createRecipe = (config, el) => {
     const runtimeFn = (options) => {
         var _a;
         let className = config.defaultClassName;
@@ -47,4 +47,4 @@ const createRuntimeFn = (config, el) => {
     return Component;
     // return runtimeFn;
 };
-exports.createRuntimeFn = createRuntimeFn;
+exports.createRecipe = createRecipe;
