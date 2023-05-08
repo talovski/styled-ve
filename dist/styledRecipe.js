@@ -34,7 +34,7 @@ function recipe(options, el, debugId) {
     };
     //
     const args = [config, el];
-    const Component = (0, recipeRuntime_1.createRecipe)(config, el);
+    const Component = (0, recipeRuntime_1.recipeRuntime)(config, el);
     (0, functionSerializer_1.addFunctionSerializer)(Component, {
         importPath: 'styled-ve/recipeRuntime',
         importName: 'recipeRuntime',

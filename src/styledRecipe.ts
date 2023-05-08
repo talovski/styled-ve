@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 import { addFunctionSerializer } from '@vanilla-extract/css/functionSerializer';
-import { createRecipe } from './recipeRuntime';
+import { recipeRuntime } from './recipeRuntime';
 
 import type {
   PatternOptions,
@@ -72,7 +72,7 @@ export function recipe<T extends keyof JSX.IntrinsicElements, Variants extends V
 //
   const args = [config, el] as const;
 
-  const Component = createRecipe(config, el);
+  const Component = recipeRuntime(config, el);
 
   addFunctionSerializer(Component, {
     importPath: 'styled-ve/recipeRuntime',

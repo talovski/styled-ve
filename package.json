@@ -1,6 +1,6 @@
 {
   "name": "styled-ve",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "",
   "exports": {
     "./styled": "dist/styled.js",
@@ -8,7 +8,6 @@
     "./styledRuntime": "dist/styledRuntime.js",
     "./recipeRuntime": "dist/recipeRuntime.js"
   },
-  "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createRecipe = exports.recipe = exports.styledRuntime = exports.styled = void 0;
+exports.recipeRuntime = exports.recipe = exports.styledRuntime = exports.styled = void 0;
 var styled_1 = require("./styled");
 Object.defineProperty(exports, "styled", { enumerable: true, get: function () { return styled_1.styled; } });
 var styledRuntime_1 = require("./styledRuntime");
@@ -8,4 +8,4 @@ Object.defineProperty(exports, "styledRuntime", { enumerable: true, get: functio
 var styledRecipe_1 = require("./styledRecipe");
 Object.defineProperty(exports, "recipe", { enumerable: true, get: function () { return styledRecipe_1.recipe; } });
 var recipeRuntime_1 = require("./recipeRuntime");
-Object.defineProperty(exports, "createRecipe", { enumerable: true, get: function () { return recipeRuntime_1.createRecipe; } });
+Object.defineProperty(exports, "recipeRuntime", { enumerable: true, get: function () { return recipeRuntime_1.recipeRuntime; } });

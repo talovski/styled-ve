@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createRecipe = void 0;
+exports.recipeRuntime = void 0;
 const react_1 = require("react");
 const shouldApplyCompound = (compoundCheck, selections, defaultVariants) => {
     var _a;
@@ -11,7 +11,7 @@ const shouldApplyCompound = (compoundCheck, selections, defaultVariants) => {
     }
     return true;
 };
-const createRecipe = (config, el) => {
+const recipeRuntime = (config, el) => {
     const runtimeFn = (options) => {
         var _a;
         let className = config.defaultClassName;
@@ -40,11 +40,17 @@ const createRecipe = (config, el) => {
         return className;
     };
     runtimeFn.variants = () => Object.keys(config.variantClassNames);
-    const Component = function Component(props) {
-        return (0, react_1.createElement)(el, Object.assign(Object.assign({}, props), { className: runtimeFn() }));
-    };
-    Component.displayName = `Styled(${el})`;
-    return Component;
+    const Comp = (0, react_1.forwardRef)(function Comp(props, ref) {
+        return (0, react_1.createElement)(el, Object.assign(Object.assign({ ref }, props), { className: runtimeFn }));
+    });
+    // const Component = function Component(props: React.ComponentProps<T>) {
+    //   return createElement(el, {
+    //     className: runtimeFn(),
+    //     ...props,
+    //   });
+    // };
+    Comp.displayName = `Styled(${el})`;
+    return Comp;
     // return runtimeFn;
 };
-exports.createRecipe = createRecipe;
+exports.recipeRuntime = recipeRuntime;

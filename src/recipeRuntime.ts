@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import {createElement, forwardRef} from 'react';
 import type {
   PatternResult,
   RuntimeFn,
@@ -20,11 +20,8 @@ const shouldApplyCompound = <Variants extends VariantGroups>(
   return true;
 };
 
-<<<<<<< HEAD
-export const createRecipe = <Variants extends VariantGroups, T extends keyof JSX.IntrinsicElements>(
-=======
-export const createRuntimeFn = <Variants extends VariantGroups, T extends keyof JSX.IntrinsicElements>(
->>>>>>> origin/main
+
+export const recipeRuntime = <Variants extends VariantGroups, T extends keyof JSX.IntrinsicElements>(
   config: PatternResult<Variants>,
   el: T,
 ) /*: RuntimeFn<Variants> */ => {
@@ -69,16 +66,19 @@ export const createRuntimeFn = <Variants extends VariantGroups, T extends keyof 
   };
 
   runtimeFn.variants = () => Object.keys(config.variantClassNames);
-  
-  const Component = function Component(props: React.ComponentProps<T>) {
-    return createElement(el, {
-      ...props,
-      className: runtimeFn(),
-    });
-  };
 
-  Component.displayName = `Styled(${el})`;
-  return Component;
+  const Comp = forwardRef(function Comp(props, ref) {
+    return createElement(el, { ref, ...props, className: runtimeFn})
+  })
+  // const Component = function Component(props: React.ComponentProps<T>) {
+  //   return createElement(el, {
+  //     className: runtimeFn(),
+  //     ...props,
+  //   });
+  // };
+
+  Comp.displayName = `Styled(${el})`;
+  return Comp;
 
   // return runtimeFn;
 };
