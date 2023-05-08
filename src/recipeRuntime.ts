@@ -20,7 +20,11 @@ const shouldApplyCompound = <Variants extends VariantGroups>(
   return true;
 };
 
+<<<<<<< HEAD
 export const createRecipe = <Variants extends VariantGroups, T extends keyof JSX.IntrinsicElements>(
+=======
+export const createRuntimeFn = <Variants extends VariantGroups, T extends keyof JSX.IntrinsicElements>(
+>>>>>>> origin/main
   config: PatternResult<Variants>,
   el: T,
 ) /*: RuntimeFn<Variants> */ => {
