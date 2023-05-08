@@ -1,8 +1,13 @@
 {
   "name": "styled-ve",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
-  "exports": {".": "dist/index.js", "./runtime": "dist/runtime.js"},
+  "exports": {
+    ".": "dist/index.js",
+    "./styledRecipe": "dist/styledRecipe.js",
+    "./runtime": "dist/runtime.js",
+    "./recipeRuntime": "dist/recipeRuntime.js"
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
@@ -12,8 +17,11 @@
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.2.6",
-    "typescript": "^5.0.4",
     "@vanilla-extract/css": "^1.11.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@vanilla-extract/recipes": "^0.4.0"
   }
 }

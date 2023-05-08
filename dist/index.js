@@ -10,7 +10,6 @@ function styled(el, rules) {
     (0, functionSerializer_1.addFunctionSerializer)(Component, {
         importPath: 'styled-ve/runtime',
         importName: 'runtime',
-        // TODO: Fix this type, was complaining about string not being assignable to Serializable from VE lib
         args: args,
     });
     return Component;
