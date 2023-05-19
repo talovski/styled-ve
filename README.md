@@ -14,3 +14,8 @@ You can use Styled Components API like that:
 export const Button = styled('button', {
   display: 'flex'
 })
+
+
+## Roadmap
+- add recipe API
+- ? add colocation (e.g. creating styled in `.tsx` (requires major re-write)
